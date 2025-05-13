@@ -32,6 +32,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.book_service.presentation.ListBookScreen
 import com.example.book_service.ui.theme.Book_ServiceTheme
 
 
@@ -43,10 +44,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             Book_ServiceTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                   ListBookScreen(innerPadding)
                 }
             }
         }
@@ -57,7 +55,7 @@ class MainActivity : ComponentActivity() {
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Column (
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .background(colorResource(R.color.teal_700))
             .padding(WindowInsets.statusBars.asPaddingValues()) // avoid the safe area
